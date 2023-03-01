@@ -20,6 +20,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.ext.ContextResolver;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import bookle.modelo.Actividad;
 import bookle.rest.Listado.ResumenExtendido;
@@ -40,12 +43,12 @@ public class BookleControladorRest {
 
 	@Context
 	private UriInfo uriInfo;
-
+	
 	// Ejemplo: http://localhost:8080/api/actividades/1
-
+	
 	@GET
 	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	@ApiOperation(value = "Consulta una actividad", notes = "Retorna una actividad utilizando su id", response = Actividad.class)
 	@ApiResponses(value = { @ApiResponse(code = HttpServletResponse.SC_OK, message = ""),
 			@ApiResponse(code = HttpServletResponse.SC_NOT_FOUND, message = "Actividad no encontrada") })
@@ -109,6 +112,7 @@ public class BookleControladorRest {
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public Response getListadoActividades() throws Exception {
 
+		
 		List<ActividadResumen> resultado = servicio.getListadoActividades();
 
 		LinkedList<ResumenExtendido> extendido = new LinkedList<Listado.ResumenExtendido>();

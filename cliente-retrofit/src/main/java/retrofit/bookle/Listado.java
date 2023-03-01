@@ -1,11 +1,8 @@
-package bookle.rest;
+package retrofit.bookle;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
-import bookle.servicio.ActividadResumen;
 
 @XmlRootElement
 public class Listado {
@@ -29,17 +26,6 @@ public class Listado {
 		}
 		
 	}
-	
-	private LocalDateTime fecha = LocalDateTime.now();
-	
-	public LocalDateTime getFecha() {
-		return fecha;
-	}
-	
-	public void setFecha(LocalDateTime fecha) {
-		this.fecha = fecha;
-	}
-	
 	
 	private List<ResumenExtendido> actividad;
 	
