@@ -2,6 +2,7 @@
 
 En este repositorio se alojan proyectos que se presentan como referencia durante el desarrollo de la asignatura.
 
+- Proyectos **GraphQL**: `enlaces`, `usuarios`, `enlaces-graphql-1`, `enlaces-graphql-2` y `enlaces-graphql-3`. Para probar los proyectos *graphql* es necesario ejecutar `install` sobre los proyectos base `enlaces` y `usuarios`.
 - `cliente-retrofit`: ejemplos de uso de la librería **Retrofit**.
 - `encuestas`: proyecto base con la implementación del servicio *Encuestas*.
 - `bookle` y `bookle-rest`: proyectos que implementan el caso de estudio *Bookle*. El primero contiene la implementación del servicio. El segundo establece una dependencia Maven con el primero e implementa el controlador REST. Por tanto, es necesario ejecutar el target *install* en el proyecto `bookle` para proporcionar la dependencia al segundo proyecto.
